@@ -16,3 +16,15 @@ section {
   justify-content: center;
   text-align: center;
 }
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  z-index: 999;
+  opacity: 0.8;
+}
+
+.back-to-top:hover {
+  opacity: 1;
+}

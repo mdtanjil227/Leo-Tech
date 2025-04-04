@@ -31,12 +31,32 @@ forms.forEach(form => {
     if (!form.checkValidity()) {
       form.classList.add('was-validated');
     } else {
-      // For now, show alert (you can replace with email logic later)
-      alert("Thanks! Your message has been sent.");
+      const toast = new bootstrap.Toast(document.getElementById('contactToast'));
+      toast.show();
+    
       form.reset();
       form.classList.remove('was-validated');
     }
   }, false);
 });
+// Scroll animation
+ScrollReveal().reveal('section', {
+  distance: '50px',
+  duration: 800,
+  easing: 'ease-out',
+  origin: 'bottom',
+  reset: true,
+  interval: 100,
+});
 
+// Back to top button
+const backToTopBtn = document.querySelector('.back-to-top');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTopBtn.style.display = 'block';
+  } else {
+    backToTopBtn.style.display = 'none';
+  }
+});
 
